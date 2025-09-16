@@ -1,5 +1,3 @@
-const objectAssign = require('object-assign');
-
 export const NOTIF_SEND = 'NOTIF_SEND';
 export const NOTIF_DISMISS = 'NOTIF_DISMISS';
 export const NOTIF_CLEAR = 'NOTIF_CLEAR';
@@ -10,7 +8,7 @@ export const NOTIF_CLEAR = 'NOTIF_CLEAR';
  * - if id wasn't specified, a time based id will be generated.``
  */
 export function notifSend(notif) {
-  const payload = objectAssign({}, notif);
+  const payload = Object.assign({}, notif);
   if (!payload.id) {
     payload.id = new Date().getTime();
   }
